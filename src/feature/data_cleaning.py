@@ -24,17 +24,11 @@ class Cleaning:
         num_cols = num_cols.drop('SK_ID_CURR')
         cate_cols = self.train_df.select_dtypes(include='object').columns
 
-        # # Fill missing values in numerical columns
-        # imputer = SimpleImputer(strategy='mean')
-        # imputer.fit(self.train_df[num_cols])
-        # self.train_df[num_cols] = imputer.transform(self.train_df[num_cols])
-        # self.test_df[num_cols] = imputer.transform(self.test_df[num_cols])
-
-        # self.train_df[num_cols] = self.train_df[num_cols].astype(float)
-        # self.test_df[num_cols] = self.test_df[num_cols].astype(float)
-
-        self.train_df[num_cols] = self.train_df[num_cols].apply(lambda x: x.fillna(x.mean()), axis=0)
-        self.test_df[num_cols] = self.test_df[num_cols].apply(lambda x: x.fillna(x.mean()), axis=0)
+        # Fill missing values in numerical columns
+        imputer = SimpleImputer(strategy='mean')
+        imputer.fit(self.train_df[num_cols])
+        self.train_df[num_cols] = imputer.transform(self.train_df[num_cols])
+        self.test_df[num_cols] = imputer.transform(self.test_df[num_cols])
        
         # Fill missing values in categorical columns
         self.train_df[cate_cols] = self.train_df[cate_cols].apply(lambda x: x.fillna('Missing'), axis=0)
@@ -73,5 +67,3 @@ if __name__ == '__main__':
     train_df, test_df = Cleaning(train_df, test_df).execute()
     print(train_df.head())
     print(test_df.head())
-    
-

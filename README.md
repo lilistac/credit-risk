@@ -27,6 +27,15 @@ To run this project locally, follow these steps:
 
 ## Usage
 ### Data
+Create the following folder to store data
+```
+credit-risk
+└── data
+    ├── raw
+    ├── processed
+    └── submission
+```
+
 
 Add the raw data to the folder **data/raw**
 ### Exploratory Data Analysis (EDA)
@@ -67,25 +76,5 @@ Private score: 0.55685
 
 ## Contribution
 - Nguyễn Cẩm Ly (Team leader)
-    - Exploratory Data Analysis (EDA):
-        - dseb63_application_{train/test}.csv
-        - dseb63_credit_card_balance.csv
-    - Feature engineering (all tables)
 - Võ Thị Yến Nhi
-    - Exploratory Data Analysis (EDA):
-        - dseb63_installments_payments.csv
-        - dseb63_previous_application.csv
-        - dseb63_POS_CASH_balance
-    - Feature engineering:  
-        - dseb63_installments_payments.csv
-        - dseb63_previous_application.csv
-        - dseb63_POS_CASH_balance
 - Nguyễn Thành Long
-    - Exploratory Data Analysis (EDA):
-        - dseb63_bureau_balance.csv
-        - dseb63_bureau.csv
-        - dseb63_POS_CASH_balance
-    - Feature engineering:  
-        - dseb63_bureau_balance.csv
-        - dseb63_bureau.csv
-        - dseb63_POS_CASH_balance
